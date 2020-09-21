@@ -1,0 +1,143 @@
+html {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans,
+    Helvetica Neue, "Noto Sans Armenian", "Noto Sans Bengali",
+    "Noto Sans Cherokee", "Noto Sans Devanagari", "Noto Sans Ethiopic",
+    "Noto Sans Georgian", "Noto Sans Hebrew", "Noto Sans Kannada",
+    "Noto Sans Khmer", "Noto Sans Lao", "Noto Sans Osmanya", "Noto Sans Tamil",
+    "Noto Sans Telugu", "Noto Sans Thai", sans-serif;
+}
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: #edeef0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 42px;
+  background-color: #4a76a8;
+}
+
+nav div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo {
+  width: 165px;
+  height: 19px;
+  margin-left: 10px;
+  background: url("./assets/ic_head_logo.svg");
+  background-repeat: no-repeat;
+}
+
+#search-bar {
+  padding: 5px;
+  width: 200px;
+  border-radius: 25px;
+  background-color: #224b7a;
+  color: #dae2ea;
+}
+
+#search-bar span {
+}
+
+#search-bar input {
+  border: none;
+  color: #8fadc8;
+  background-color: inherit;
+}
+
+#search-bar input:active {
+  outline: none;
+  appearance: none;
+}
+
+main {
+  display: flex;
+  padding-top: 30px;
+}
+main #install {
+  margin: 0 auto;
+  text-align: center;
+  width: 60%;
+}
+main #login {
+  width: 40%;
+}
+.install-text {
+  font-size: 14px;
+  color: #626d7a;
+  line-height: 20px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+.card-input {
+  width: 86%;
+  border: 1px solid #d3d9de;
+  border-radius: 4px;
+  padding: 6px 12px 8px;
+  margin-bottom: 15px;
+}
+select {
+  border: 1px solid #d3d9de;
+  border-radius: 4px;
+  padding: 6px 12px 8px;
+  margin-bottom: 15px;
+}
+label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #8fadc8;
+  padding-bottom: 10px;
+}
+.card:nth-child(2) {
+  margin-top: 30px;
+}
+.text-center {
+  text-align: center;
+}
+.btn {
+  box-sizing: content-box;
+  width: 68px;
+  background-color: #5181b8;
+  padding: 7px 16px 8px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 5px;
+  border: none;
+}
+#forget-password {
+  font-size: 12px;
+}
+.android {
+  display: inline-block;
+  width: 183px;
+  height: 442px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("./assets/reg_android_ru_2x.png");
+}
+.ios {
+  display: inline-block;
+  padding-top: 12px;
+  width: 198px;
+  height: 442px;
+  z-index: 2;
+  margin-left: -35px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("./assets/reg_iphone_ru_2x.png");
+}
