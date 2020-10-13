@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <style>
+            body {
+                background-color: #eeeeee;
+            }
+            .game {
+                width: 450px;
+            }
+            .cell {
+                height: 150px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                border: 2px solid #000000; 
+            }
+        </style>
+</head>
+<body>
+    <h1 class="text-center">Tic Tac Toe</h1>
+    <h2 class="text-center" id="winnerText"></h2>
+    <div class="container game">
+        <div class="row">
+            <div id="0" class="col-4 cell"></div>
+            <div id="1" class="col-4 cell"></div>
+            <div id="2" class="col-4 cell"></div>
+            
+            <div id="3" class="col-4 cell"></div>
+            <div id="4" class="col-4 cell"></div>
+            <div id="5" class="col-4 cell"></div>
+
+            <div id="6" class="col-4 cell"></div>
+            <div id="7" class="col-4 cell"></div>
+            <div id="8" class="col-4 cell"></div>
+        </div>
+    </div>
+    <script>
+        const xIcon = `<svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>`;
+        const oIcon = `<svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>`;
+        let row = ['', '', '', '', '', '', '', '', ''];
+        const winPositions = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
+                              [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                              [0, 4, 8], [2, 4, 6]];
+        var isX = true;
+        function checkForWin() {
+            let isWin = true;
+            countX = 0;
+            countO = 0;
+            winPositions.map(winPos => {
+                for(let i = 0; i < 3; i++) {
+                    if(row[winPos[i]] === 'x') {
+                        ++countX;
+                        if(countX === 3) document.getElementById("winnerText").innerText = "X wins"
+                    } else if(row[winPos[i]] === 'o') {
+                        ++countO;
+                        if(countO === 3) document.getElementById("winnerText").innerText = "O wins"
+                    }
+                }
+                countX = 0;
+                countO = 0;
+            });
+        }
+        function handleClick(id) {
+            const cell = document.getElementById(`${id}`);
+            if(row[id] === '') {
+                row[id] = isX ? "x" : "o";
+                cell.innerHTML = isX === true ? oIcon : xIcon;
+                isX = !isX; 
+            }
+            checkForWin();
+        }
+        const cells =  document.querySelectorAll(".cell");
+        for(let i = 0; i < cells.length; i++) {
+            cells[i].addEventListener("click", () => handleClick(i));
+        }
+    </script>
+</body>
+</html>
