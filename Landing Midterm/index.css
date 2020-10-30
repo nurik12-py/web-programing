@@ -1,0 +1,267 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+main {
+    width: 100%;
+    height: 100%;
+}
+.d-flex {
+    display: flex;
+}
+.shadow {
+    box-shadow: 0 3px 20px 3px rgba(0, 0, 0, 0.1);
+}
+/* navbar */
+nav {
+    width: 100%;
+    padding: 5px 20px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 3px 20px 3px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+/* navbar left title text */
+nav span {
+    font-weight: 600;
+    font-size: 20px;
+    font-family: 'Major Mono Display', monospace;
+}
+nav div span {
+    margin: 25px 10px;
+    font-family: 'Poppins', sans-serif;
+}
+/* conatiner for 2 items */
+.moto-conatiner  {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.down-icon {
+    position: absolute;
+    bottom: 40px;
+    left: clac(50vw - 1.25em);
+    animation-name: down-icon;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes down-icon {
+    0% {
+        transform: translateY(0px);
+    } 
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+/* right parg of moto-container */
+.moto-conatiner .moto {
+    width: 40%;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-weight: 600;
+    font-size: 50px;
+}
+/* for rotaing circles */
+.moto-conatiner .moto-circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    background-image: url("./cirlces.png");
+    background-size: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation-name: moto-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);;
+
+}
+/* for creating box and resizing font  */
+.moto-conatiner .moto p {
+    padding: 25px;
+    z-index: 1;
+    line-height: 55px;
+    border: 5px solid #000;
+}
+/* for rotating element */
+@keyframes moto-animation {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+/* for creating blur effect on element */
+.blur {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(20px);
+    height: 100%;
+    width: 100%;
+}
+/* right part of moto-conatiner */
+.moto-conatiner .text{
+    width: 40%;
+    height: 90vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+button {
+    padding: 12px 26px;
+    border-radius: 0;
+    border: 2px solid #000;
+    color: #000;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+button:hover {
+    transition-duration: 0.5s;
+    color: #fff;
+    background-color: #000;
+}
+.moto-main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.moto-main h1 {
+    text-align: center;
+}
+.card-container {
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+    height: 300px;
+    margin: 10px 20px;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ebebeb;
+}
+.card:hover {
+    transition: 0.7s;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.15);
+}
+.card .card-img {
+    width: auto;
+    height: 125px;
+}
+.card .card-title {
+    margin: 5px;
+    text-align: center;
+}
+.card .card-text {
+    text-align: center;
+    color: #383838;
+    padding: 15px;
+    padding-top: 0;
+    font-size: 14px;
+}
+.slider-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+.slide {
+    position: relative;
+    background-image: url("https://cdn.dribbble.com/users/3081324/screenshots/5884574/dribbble_presentation.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 535px;
+    height: 400px;
+}
+.slide-left {
+    position: absolute;
+    top: 185px;
+    left: -45px;
+}
+
+.slide-right {
+    position: absolute;
+    top: 185px;
+    right: -45px;
+}
+.last-card {
+    padding: 20px 25px;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.last-card div h3 {
+    margin: 0;
+    margin-top: 15px;
+}
+.last-card div p {
+    margin: 0;
+    margin-bottom: 15px;
+}
+.info {
+    text-align: center;
+}
+.last-section {
+    display: flex;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contacts p{
+    margin: 0;
+    color: #9b9b9b;
+    font-size: 14px;
+}
+.contacts h4 {
+    margin: 5px;
+}
+
+.social-media {
+    margin-top: 15px;
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.social-media-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+.info {
+    position: absolute;
+    bottom: 45px;
+}
